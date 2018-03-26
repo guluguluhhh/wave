@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			html,body{
+				height: 100%;
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				background-color: #0EA9B1;
+				overflow: hidden;
+			}
+			.bg1,.bg2{
+				
+				width: 100%;
+				height: 235px;
+				position: absolute;
+				left: 0;
+				bottom: 0;
+			}
+			.bg1{
+				background: url(image/1.png) no-repeat;
+				animation: move 1s infinite linear;
+			}
+			.bg2{
+				background: url(image/2.png) no-repeat;
+				animation: move 1s infinite .5s linear;
+			}
+			@keyframes move{
+				0%{
+					bottom: 0;
+				}
+				50%{
+					bottom: -20px;
+				}
+				100%{
+					bottom: 0px;
+				}
+			}
+			.sun{
+				width: 100px;
+				height: 100px;
+				background-color: #fff;
+				margin: 100px 200px;
+				border-radius: 50%;
+				position: relative;
+			}
+			.sun::before,.sun::after{
+				content: "";
+
+				width: 100%;
+				height: 100%;
+				background-color: #fff;
+				position: absolute;
+				left: 0;
+				top: 0;
+				border-radius: 50%;
+			}
+			.sun::before{
+				animation: sunchange 1s infinite linear;
+			}
+			.sun::after{
+				animation: sunchange 1s infinite .5s linear;
+			}
+			@keyframes sunchange{
+				0%{
+					opacity: 1;
+					transform: scale(1);
+				}
+				100%{
+					opacity: 0.3;
+					transform: scale(2);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="sun"></div>
+		<div class="bg1"></div>
+		<div class="bg2"></div>
+	</body>
+</html>
